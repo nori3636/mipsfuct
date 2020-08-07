@@ -1,32 +1,10 @@
-*.*
-!/*.gitignore
-
-# ignore Quartus generated folders
-/db/
-/incremental_db/
-/simulation/
-/timing/
-/testbench/
-/*_sim/
-
-# project files
-!*.qpf
-!*.qsf
-# source files
-!*.bdf
-!*.vhd
-!*.v
-!*.sv
-# IP core files
-!*.qip
-!*.sip
-!*.bsf
-# SOPC builder project source files
-!*.ptf
-!*.bsf
-# board description
-!**/class.ptf
-# sdc files:
-!*.sdc
-# tcl files:
-!*.tcl
+*
+!/alu.vhd
+!/chattering.vhd
+!/DE10_LITE_Default.vhd
+!/dm.vhd
+!/im.vhd
+!/mipsnp.vhd
+!/mp.vhd
+!/rf.vhd
+!/TogleFF.vhd
