@@ -16,7 +16,8 @@ architecture RTL of ALU is
 
 begin
 
-    ALUOut <= AIn + BIn when (ALUPlus = '1') else
+    ALUOut <= mul(31 downto 0) when (ALUPlus = '1' and ALUMinus = '1') else
+            　AIn + BIn when (ALUPlus = '1') else
               AIn - BIn when (ALUMinus = '1') else
               (others => '0');
 
