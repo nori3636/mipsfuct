@@ -21,7 +21,7 @@ end RF;
 architecture RTL of RF is
 signal rs, rt, rd : std_logic_vector(4 downto 0);
 signal rsSel, rtSel : std_logic;
-signal r1, r2, r3, r28, r29, r30, r31 : std_logic_vector(31 downto 0);
+signal r1, r2, r3, r4, r8, r28, r29, r30, r31 : std_logic_vector(31 downto 0);
 signal rdSet, rtSet, r31Set : std_logic;
 
 begin
@@ -54,6 +54,8 @@ begin
             r1 <= X"00000000";  -- r1 for test
             r2 <= X"00000000";  -- r2 for test
             r3 <= X"00000000";  -- r3 for test
+            r4 <= X"00000000";  -- r4 for test
+            r8 <= X"00000000";  -- r8 for test
             r29 <= (others => '0');  -- sp
             r30 <= (others => '0');  -- fp
             r31 <= (others => '0');  -- ra
