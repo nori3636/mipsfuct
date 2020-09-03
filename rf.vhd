@@ -35,12 +35,13 @@ begin
     rtSet <= RSet(1);
     r31Set <= RSet(0);
 	 
-	 ReO : process(RegN, r1, r2, r3, r29, r30, r31)
+	 ReO : process(RegN, r1, r2, r3, r4, r29, r30, r31)
 	 begin
 		case (RegN) is
          when "001" => RegOut <= r1(15 downto 0);
-			when "010" => RegOut <= r2(15 downto 0);
-			when "011" => RegOut <= r3(15 downto 0);
+         when "010" => RegOut <= r2(15 downto 0);
+         when "011" => RegOut <= r3(15 downto 0);
+         when "100" => RegOut <= r4(15 downto 0);
 			when "101" => RegOut <= r29(15 downto 0);
 			when "110" => RegOut <= r30(15 downto 0);
 			when "111" => RegOut <= r31(15 downto 0);
@@ -65,7 +66,8 @@ begin
                     when "00001" => r1 <= rC;
                     when "00010" => r2 <= rC;
                     when "00011" => r3 <= rC;
-						  when "11100" => r28 <= rC;
+                    when "00100" => r4 <= rC;
+                    when "11100" => r28 <= rC;
                     when "11101" => r29 <= rC;
                     when "11110" => r30 <= rC;
                     when "11111" => r31 <= rC;
@@ -76,7 +78,8 @@ begin
                     when "00001" => r1 <= rC;
                     when "00010" => r2 <= rC;
                     when "00011" => r3 <= rC;
-						  when "11100" => r28 <= rC;
+                    when "00100" => r4 <= rC;
+                    when "11100" => r28 <= rC;
                     when "11101" => r29 <= rC;
                     when "11110" => r30 <= rC;
                     when "11111" => r31 <= rC;
@@ -88,14 +91,15 @@ begin
         end if;
     end process;
     
-    RAo : process(rsSel, rs, r1, r2, r3, r29, r30, r31)
+    RAo : process(rsSel, rs, r1, r2, r3, r4, r29, r30, r31)
     begin
         if (rsSel = '1') then  --rA
             case (rs) is
                 when "00001" => rA <= r1;
                 when "00010" => rA <= r2;
                 when "00011" => rA <= r3;
-					 when "11100" => rA <= r28;
+                when "00100" => rA <= r4;
+			    when "11100" => rA <= r28;
                 when "11101" => rA <= r29;
                 when "11110" => rA <= r30;
                 when "11111" => rA <= r31;
@@ -106,14 +110,15 @@ begin
         end if;
     end process;
 
-    RBo : process(rtSel, rt, r1, r2, r3, r29, r30, r31)
+    RBo : process(rtSel, rt, r1, r2, r3, r4, r29, r30, r31)
     begin
         if (rtSel = '1') then  -- rB
             case (rt) is
                 when "00001" => rB <= r1;
                 when "00010" => rB <= r2;
                 when "00011" => rB <= r3;
-					 when "11100" => rB <= r28;
+                when "00100" => rB <= r4;
+				when "11100" => rB <= r28;
                 when "11101" => rB <= r29;
                 when "11110" => rB <= r30;
                 when "11111" => rB <= r31;

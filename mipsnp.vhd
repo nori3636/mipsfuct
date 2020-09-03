@@ -10,7 +10,7 @@ entity MIPSnp is
 		  EN : in std_logic;							   --Enavle
 		  RegN : in std_logic_vector(2 downto 0); --Reg number
 		  Count : in std_logic_vector(3 downto 0);
-        PCout : out std_logic_vector(7 downto 0);
+          PCout : out std_logic_vector(7 downto 0);
 		  regD : out std_logic_vector(15 downto 0) -- Reg Data 
     );
 end MIPSnp;
