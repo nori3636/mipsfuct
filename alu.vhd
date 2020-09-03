@@ -13,12 +13,15 @@ entity ALU is
 end ALU;
 
 architecture RTL of ALU is
+signal mul : std_logic_veCtor(63 downto 0);
+
 
 begin
 
+    mul <= Ain * Bin;
     ALUOut <= mul(31 downto 0) when (ALUPlus = '1' and ALUMinus = '1') else
-            　AIn + BIn when (ALUPlus = '1') else
-              AIn - BIn when (ALUMinus = '1') else
+              AIn + BIn when (ALUPlus = '1' and ALUMinus = '0') else
+              AIn - BIn when (ALUPlus = '0' and ALUMinus = '1') else
               (others => '0');
 
 end RTL;
